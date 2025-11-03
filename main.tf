@@ -16,7 +16,7 @@ terraform {
 }
 
 provider "aws" {
-  region = var.aws_region
+  region = "ap-south-1"
 }
 
 # ---------------------------
@@ -25,7 +25,7 @@ provider "aws" {
 resource "aws_security_group" "oracle_rds_sg" {
   name        = "terraform-oracle-rds-sg"
   description = "Allow Oracle DB access"
-  #vpc_id      = var.vpc_id
+  vpc_id      = "vpc-0c7beba8bb085aa58"
 
   ingress {
     description = "Allow Oracle access"
@@ -52,7 +52,7 @@ resource "aws_security_group" "oracle_rds_sg" {
 # ---------------------------
 resource "aws_db_subnet_group" "oracle_rds_subnet_group" {
   name       = "terraform-oracle-rds-subnet-group"
-  subnet_ids = var.subnet_ids
+  subnet_ids = ["subnet-0856410169a97e2f2"]
 
   tags = {
     Name = "Terraform-Oracle-RDS-Subnet-Group"
@@ -66,11 +66,11 @@ resource "aws_db_instance" "oracle_rds" {
   identifier              = "terraform-oracle-db"
   engine                  = "oracle-se2"
   engine_version          = "19.0.0.0.ru-2024-07.rur-2024-07.r1"
-  instance_class          = var.db_instance_type
+  instance_class          = "db.t3.medium"
   allocated_storage       = 20
   storage_type            = "gp2"
-  username                = var.db_username
-  password                = var.db_password
+  username                = "adminuser"
+  password                = "AdminPass123!"
   db_subnet_group_name    = aws_db_subnet_group.oracle_rds_subnet_group.name
   vpc_security_group_ids  = [aws_security_group.oracle_rds_sg.id]
   skip_final_snapshot     = true
