@@ -80,6 +80,7 @@ resource "aws_db_instance" "oracle_rds" {
   skip_final_snapshot     = true
   publicly_accessible     = true
   port                    = 1521
+  license_model           = "bring-your-own-license"
 
   tags = {
     Name = "Terraform-Oracle-RDS"
