@@ -81,7 +81,6 @@ resource "aws_db_instance" "oracle_rds" {
   publicly_accessible     = true
   port                    = 1521
   license_model           = "bring-your-own-license"
-  apply.immediately         = true
 
   tags = {
     Name = "Terraform-Oracle-RDS"
