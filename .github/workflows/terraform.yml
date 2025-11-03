@@ -20,22 +20,22 @@ on:
           - plan
           - apply
           - destroy
-      db_instance_class:
-        description: "RDS instance class"
-        required: true
-        default: "db.t3.micro"
-      db_name:
-        description: "Database name"
-        required: true
-        default: "oracledb"
-      engine_version:
-        description: "Oracle engine version"
-        required: true
-        default: "19.0.0.0.ru-2024-01.rur-2024-01.r1"
-      allocated_storage:
-        description: "Storage in GB"
-        required: true
-        default: "20"
+#      db_instance_class:
+#        description: "RDS instance class"
+#        required: true
+#        default: "db.t3.micro"
+#      db_name:
+#        description: "Database name"
+#        required: true
+#        default: "oracledb"
+#      engine_version:
+#        description: "Oracle engine version"
+#        required: true
+#        default: "19.0.0.0.ru-2024-01.rur-2024-01.r1"
+#      allocated_storage:
+#        description: "Storage in GB"
+#        required: true
+#        default: "20"
 
 permissions:
   contents: read
