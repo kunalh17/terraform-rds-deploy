@@ -25,7 +25,7 @@ provider "aws" {
 resource "aws_security_group" "oracle_rds_sg" {
   name        = "terraform-oracle-rds-sg"
   description = "Allow Oracle DB access"
-  vpc_id      = var.vpc_id
+  vpc_id      = "vpc-0c7beba8bb085aa58"
 
   ingress {
     description = "Allow Oracle access"
