@@ -83,7 +83,7 @@ resource "aws_db_instance" "oracle_rds" {
 
   tags = {
     Name = "Terraform-Oracle-RDS"
-    Environment = var.environment
+    Environment = dev
   }
 }
 
