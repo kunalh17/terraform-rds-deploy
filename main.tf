@@ -71,7 +71,7 @@ resource "aws_db_instance" "oracle_rds" {
   engine                  = "oracle-se2"
   engine_version          = "19.0.0.0.ru-2024-07.rur-2024-07.r1"
   instance_class          = var.db_instance_type
-  allocated_storage       = 20
+  allocated_storage       = 10
   apply_immediately       = true
   storage_type            = "gp2"
   username                = var.db_username
